@@ -659,8 +659,7 @@ class LocoPositioningTab(Tab, locopositioning_tab_class):
         """Callback when the Crazyflie has been connected"""
         logger.debug("Crazyflie connected to {}".format(link_uri))
 
-        self.is_loco_deck_active = bool(
-            self._helper.cf.mem.ow_search(vid=0xBC, pid=0x06))
+        self.is_loco_deck_active = True
         if self.is_loco_deck_active:
             try:
                 self._register_logblock(
